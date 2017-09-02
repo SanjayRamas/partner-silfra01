@@ -8,7 +8,7 @@
         <meta name="robots" content="noindex">
         <title>Core Committee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>-->
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
@@ -29,21 +29,22 @@
                   </div>
 
                   <div style="padding-top:30px" class="panel-body" >
-                      <form name="email" ng-submit="angCtrl.emailForm()" class="form-horizontal" method="POST" novalidate>
+                      <form name="email" type="form-control" ng-submit="angCtrl.emailForm()" class="form-horizontal" method="POST" novalidate>
 
                           <div style="margin-bottom: 25px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                      <input type="email" id="inputemail" class="form-control" placeholder="Enter a Partner Head Email" required autofocus ng-model="angCtrl.inputData.email">
+                                      <input type="email" id="inputemail" class="form-control" placeholder="Enter a Partner Head Email" ng-model="angCtrl.inputData.email" ng-required="true">
+										
+						  </div>
+
+                          <div style="margin-bottom: 25px" class="input-group">
+                                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                      <input type="email" id="inputemail2" class="form-control" placeholder="Enter a training excellence Email" ng-model="angCtrl.inputData.email2" ng-required="true">
                           </div>
 
                           <div style="margin-bottom: 25px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                      <input type="email" id="inputemail2" class="form-control" placeholder="Enter a training excellence Email" required autofocus ng-model="angCtrl.inputData.email2">
-                          </div>
-
-                          <div style="margin-bottom: 25px" class="input-group">
-                                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                      <input type="email" id="inputemail3" class="form-control" placeholder="Enter a delivery head Email"required autofocus ng-model="angCtrl.inputData.email3">
+                                      <input type="email" id="inputemail3" class="form-control" placeholder="Enter a delivery head Email" ng-model="angCtrl.inputData.email3" ng-required="true">
                           </div>
                           <div class="form-group">
                               <!-- Button -->
@@ -63,7 +64,7 @@
   </div>
     <!-- Application Dependencies -->
     <script src="node_modules/api-check/dist/api-check.js"></script>
-    <script src="node_modules/angular/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="node_modules/angular-formly/dist/formly.js"></script>
     <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
 
@@ -81,14 +82,10 @@
 				data: user_data,
 				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			})
-			/*.success(function(data) {
+			.success(function(data) {
         console.log(data);
-				if ( data.trim() === 'correct') {
-					window.location.href = 'index.php';
-				} else {
-					$scope.errorMsg = "Failed";
-				}
-			})*/
+				alert("Success");
+			})
 		}
 
 	}]);

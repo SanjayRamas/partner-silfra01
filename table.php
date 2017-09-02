@@ -74,11 +74,13 @@ require_once 'db_config.php';
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
+
+.hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
         </style>
     </head>
     <body>
-    
-    <form class="form-inline" action="validity.php" method="POST">
+    <iframe name="hiddenFrame" class="hide"></iframe>
+    <form class="form-inline" action="validity.php" method="POST" target="hiddenFrame">
     <table class="table table-bordered">
     <thead>
         <tr>
@@ -96,12 +98,9 @@ require_once 'db_config.php';
                 $password = "";
                 $dbname = "partner";
 
-
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 
-
-
-                $sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner";
+                $sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -110,21 +109,13 @@ require_once 'db_config.php';
                 {
                    
                 ?>
-        <tr>
-          
-            
+        <tr> 
             <td>
- <?php echo $row["legal_name"]; ?>
-                
-                
- </td> 
-                
-             
-            
+ <?php echo $row["legal_name"]; ?>                         
+ </td>       
             <td>
  <?php echo $row["partner_type"]; ?>
-                
-                
+                           
  </td>
             <td><div class="checkbox">
             <label style="font-size: 1.0em">
@@ -137,7 +128,137 @@ require_once 'db_config.php';
         </tr><?php } }?>
         
     </tbody>
+
+         
+    <thead>
+        
+    </thead>
+    <tbody>
+          <?php 
+                
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "partner";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                
+                $sql = "SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+    
+                while($row = $result->fetch_assoc()) 
+                {
+                   
+                ?>
+        <tr> 
+            <td>
+ <?php echo $row["corporate_legal_name"]; ?>                         
+ </td>       
+            <td>
+ <?php echo $row["partner_type"]; ?>
+                           
+ </td>
+            <td><div class="checkbox">
+            <label style="font-size: 1.0em">
+                <input type="checkbox" name="corporate_legal_name[]" value="<?php echo $row["corporate_legal_name"]; ?>">
+                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+            
+            </label>
+                </div></td>
+            
+        </tr><?php } }?>
+        
+    </tbody>
+
+    <thead>
+        
+    </thead>
+    <tbody>
+          <?php 
+                
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "partner";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                
+                $sql = "SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'";
+                $result = $conn->query($sql);
+               
+                if ($result->num_rows > 0) {
+    
+                while($row = $result->fetch_assoc()) 
+                {
+                   
+                ?>
+        <tr> 
+            <td>
+ <?php echo $row["p_legal_name"]; ?>                         
+ </td>       
+            <td>
+ <?php echo $row["partner_type"]; ?>
+                           
+ </td>
+            <td><div class="checkbox">
+            <label style="font-size: 1.0em">
+                <input type="checkbox" name="p_legal_name[]" value="<?php echo $row["p_legal_name"]; ?>">
+                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+            
+            </label>
+                </div></td>
+            
+        </tr><?php } }?>
+        
+    </tbody>
+
+    <thead>
+       
+    </thead>
+    <tbody>
+          <?php 
+                
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "partner";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                
+                $sql = "SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+    
+                while($row = $result->fetch_assoc()) 
+                {
+                   
+                ?>
+        <tr> 
+            <td>
+ <?php echo $row["f_legal_name"]; ?>                         
+ </td>       
+            <td>
+ <?php echo $row["partner_type"]; ?>
+                           
+ </td>
+            <td><div class="checkbox">
+            <label style="font-size: 1.0em">
+                <input type="checkbox" name="f_legal_name[]" value="<?php echo $row["f_legal_name"]; ?>">
+                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+            
+            </label>
+                </div></td>
+            
+        </tr><?php } }?>
+        
+    </tbody>
 </table>
+        
+       
+           
    <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </body>

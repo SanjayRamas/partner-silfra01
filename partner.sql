@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2017 at 10:17 PM
+-- Generation Time: Sep 02, 2017 at 10:10 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -71,6 +71,7 @@ CREATE TABLE `corporate_implementation_partner` (
   `location_csr_rep_email` varchar(50) NOT NULL,
   `template_for_data_collection_from_MIC` varchar(10) NOT NULL,
   `csr_director_email` varchar(50) NOT NULL,
+  `partner_type` varchar(50) NOT NULL,
   `valid` enum('no','yes') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -93,6 +94,7 @@ CREATE TABLE `fully_funded_project_implementation_partner` (
   `accomodation_to_HHH_Trainer_at_no_cost` varchar(10) NOT NULL,
   `discussed_cost_of_mobilization_for_MIC_program` varchar(10) NOT NULL,
   `dedicated_project_manager_for_HHH_program` varchar(10) NOT NULL,
+  `partner_type` varchar(50) NOT NULL,
   `valid` enum('no','yes') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -115,6 +117,7 @@ CREATE TABLE `participative_partner_with_self-sustenance` (
   `it_infra_readiness_for_MIC` varchar(50) NOT NULL,
   `domain_technical_training_to_add_to_MIC_program` varchar(50) NOT NULL,
   `domain_details_number_training_hours_needed` varchar(50) NOT NULL,
+  `partner_type` varchar(50) NOT NULL,
   `valid` enum('no','yes') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -127,7 +130,8 @@ CREATE TABLE `participative_partner_with_self-sustenance` (
 --
 ALTER TABLE `core_committee`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
