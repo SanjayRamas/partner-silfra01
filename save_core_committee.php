@@ -6,7 +6,7 @@ $training_excellence=$_POST['training_excellence'];
 $partner_head=$_POST['partner_head'];
 $delivery_head=$_POST['delivery_head'];
  
-$stmt7 = $DBcon->query("SELECT count(email) FROM core_committee");
+$stmt7 = $bdd->query("SELECT count(email) FROM core_committee");
 
 
 	
