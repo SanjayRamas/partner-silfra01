@@ -29,7 +29,7 @@ $mail->Body = "Dear member,<br><br>Validated<hr> ";
 foreach($_POST['legal_name'] as $val){
  $id_c=$val;
  // $sql="UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c'";
-   $DBcon->query("UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c');
+   $DBcon->query("UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c'");
   
   //Email
    $sth = $DBcon->prepare("SELECT email FROM core_committee WHERE id = 1");
