@@ -34,18 +34,20 @@
                           <div style="margin-bottom: 25px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                       <input type="email" id="inputemail" class="form-control" placeholder="Enter a Partner Head Email" ng-model="angCtrl.inputData.email" ng-required="true">
-										
+				  <span>{{angCtrl.inputData.email}}</span>					
 						  </div>
 
                           <div style="margin-bottom: 25px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                       <input type="email" id="inputemail2" class="form-control" placeholder="Enter a training excellence Email" ng-model="angCtrl.inputData.email2" ng-required="true">
-                          </div>
+				  <span>{{angCtrl.inputData.email2}}</span>
+			      </div>
 
                           <div style="margin-bottom: 25px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                       <input type="email" id="inputemail3" class="form-control" placeholder="Enter a delivery head Email" ng-model="angCtrl.inputData.email3" ng-required="true">
-                          </div>
+				  <span>{{angCtrl.inputData.email3}}</span>
+			      </div>
                           <div class="form-group">
                               <!-- Button -->
                               <div class="col-sm-12 controls">
