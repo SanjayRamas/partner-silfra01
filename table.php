@@ -93,10 +93,10 @@ require_once 'db_config.php';
     <tbody>
           <?php 
                 
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "partner";
+                $servername = "mysql://udigl5hvxqgfk9sq:hS6WRIRctjsMdBGTLqx@bqo4nnrsr-mysql.services.clever-cloud.com:3306/bqo4nnrsr";
+                $username = "udigl5hvxqgfk9sq";
+                $password = "hS6WRIRctjsMdBGTLqx";
+                $dbname = "bqo4nnrsr";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 
