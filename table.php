@@ -105,7 +105,7 @@ require_once 'db_config.php';
 
                 if ($result->rowCount() > 0) {
     
-                while($row = $result->fetch_assoc()) 
+                while($row = $result->fetch( PDO::FETCH_ASSOC ))) 
                 {
                    
                 ?>
@@ -148,7 +148,7 @@ require_once 'db_config.php';
 
                 if ($result->rowCount() > 0) {
     
-                while($row = $result->fetch_assoc()) 
+                while($row = $result->fetch( PDO::FETCH_ASSOC )) 
                 {
                    
                 ?>
@@ -190,7 +190,7 @@ require_once 'db_config.php';
                
                 if ($result->rowCount() > 0) {
     
-                while($row = $result->fetch_assoc()) 
+                while($row = $result->fetch( PDO::FETCH_ASSOC )) 
                 {
                    
                 ?>
@@ -232,7 +232,7 @@ require_once 'db_config.php';
 
                 if ($result->rowCount() > 0) {
     
-                while($row = $result->fetch_assoc()) 
+                while($row = $result->fetch( PDO::FETCH_ASSOC )) 
                 {
                    
                 ?>
