@@ -100,10 +100,10 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = $DBcon->prepare("SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'");
-                $result = $sql->execute();
+                $sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'";
+                $result = $sql->query($sql);
 
-                if ($result->num_rows > 0) {
+                if ($result->rowCount > 0) {
     
                 while($row = $result->fetch_assoc()) 
                 {
@@ -143,10 +143,10 @@ require_once 'db_config.php';
 
                 //$conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = $DBcon->prepare("SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'");
-                $result = $sql->execute();
+                $sql = "SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'";
+                $result = $DBcon->query($sql);
 
-                if ($result->num_rows > 0) {
+                if ($result->rowCount > 0) {
     
                 while($row = $result->fetch_assoc()) 
                 {
@@ -185,10 +185,10 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = $DBcon->prepare("SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'");
-                $result = $sql->execute();
+                $sql = "SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'";
+                $result = $sql->query($sql);
                
-                if ($result->num_rows > 0) {
+                if ($result->rowCount > 0) {
     
                 while($row = $result->fetch_assoc()) 
                 {
@@ -227,10 +227,10 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = $DBcon->prepare("SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'");
-                $result = $sql->execute();
+                $sql = "SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'";
+                $result = $sql->query($sql);
 
-                if ($result->num_rows > 0) {
+                if ($result->rowCount > 0) {
     
                 while($row = $result->fetch_assoc()) 
                 {
