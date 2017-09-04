@@ -105,7 +105,7 @@ require_once 'db_config.php';
 
                 if ($result->rowCount() > 0) {
     
-                while($row = $result->fetch( PDO::FETCH_ASSOC ))) 
+                while($row = $result->fetch( PDO::FETCH_ASSOC )) 
                 {
                    
                 ?>
