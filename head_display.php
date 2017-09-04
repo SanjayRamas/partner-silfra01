@@ -49,10 +49,8 @@ require_once 'db_config.php';
     </tbody>
 
          
-    <thead>
-        
-    </thead>
-    <tbody>
+   
+   
           <?php 
                 
                 //$servername = "localhost";
@@ -79,12 +77,10 @@ require_once 'db_config.php';
             
         <?php } }?>
         
-    </tbody>
 
-    <thead>
-        
-    </thead>
-    <tbody>
+
+   
+   
           <?php 
                 
                // $servername = "localhost";
@@ -113,9 +109,7 @@ require_once 'db_config.php';
         
     </tbody>
 
-    <thead>
-       
-    </thead>
+    
  
 </table>
         
