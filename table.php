@@ -100,8 +100,8 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'";
-                $result = $sql->query($sql);
+                //$sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'";
+                $result = $sql->query("SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'");
 
                 if ($result->rowCount > 0) {
     
@@ -143,8 +143,8 @@ require_once 'db_config.php';
 
                 //$conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'";
-                $result = $DBcon->query($sql);
+                //$sql = "SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'";
+                $result = $DBcon->query("SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'");
 
                 if ($result->rowCount > 0) {
     
@@ -185,8 +185,8 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'";
-                $result = $sql->query($sql);
+               // $sql = "SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'";
+                $result = $sql->query("SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'");
                
                 if ($result->rowCount > 0) {
     
@@ -227,8 +227,8 @@ require_once 'db_config.php';
 
                // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'";
-                $result = $sql->query($sql);
+               // $sql = "SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'";
+                $result = $sql->query("SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'");
 
                 if ($result->rowCount > 0) {
     
