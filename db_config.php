@@ -7,9 +7,9 @@
 
 
 $DBcon = new PDO(
-    'postgresql:host='.getenv("POSTGRESQL_ADDON_HOST").';dbname='.getenv("POSTGRESQL_ADDON_DB"),
-    getenv("POSTGRESQL_ADDON_USER"),
-    getenv("POSTGRESQL_ADDON_PASSWORD"));
+    'postgresql:host='.getenv("MYSQL_ADDON_HOST").';dbname='.getenv("MYSQL_ADDON_DB"),
+    getenv("MYSQL_ADDON_USER"),
+    getenv("MYSQL_ADDON_PASSWORD"));
  $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
      //$DBcon = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
