@@ -12,7 +12,7 @@ $DBcon = new PDO(
     getenv("POSTGRESQL_ADDON_USER"),
     getenv("POSTGRESQL_ADDON_PASSWORD")
  
- 
+ );
      //$DBcon = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
     // $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  }
