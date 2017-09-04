@@ -7,7 +7,7 @@
 
 
 $DBcon = new PDO(
-    'postgresql:host='.getenv("MYSQL_ADDON_HOST").';dbname='.getenv("MYSQL_ADDON_DB"),
+    'mysql:host='.getenv("MYSQL_ADDON_HOST").';dbname='.getenv("MYSQL_ADDON_DB"),
     getenv("MYSQL_ADDON_USER"),
     getenv("MYSQL_ADDON_PASSWORD"));
  $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
