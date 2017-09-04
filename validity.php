@@ -28,8 +28,8 @@ $mail->Body = "Dear member,<br><br>Validated<hr> ";
 				if(gettype($_POST['legal_name'])=="array"){
 foreach($_POST['legal_name'] as $val){
  $id_c=$val;
-  $sql="UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c'";
-   $conn->query($sql);
+ // $sql="UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c'";
+   $DBcon->query("UPDATE cluster_ngo_partner SET valid = 'yes' WHERE legal_name='$id_c');
   
   //Email
    $sth = $DBcon->prepare("SELECT email FROM core_committee WHERE id = 1");
@@ -64,8 +64,8 @@ else{
 if(gettype($_POST['corporate_legal_name'])=="array"){
 foreach($_POST['corporate_legal_name'] as $val){
  $id_c=$val;
-  $sql="UPDATE corporate_implementation_partner SET valid = 'yes' WHERE corporate_legal_name='$id_c'";
-   $conn->query($sql);
+  // $sql="UPDATE corporate_implementation_partner SET valid = 'yes' WHERE corporate_legal_name='$id_c'";
+   $DBcon->query("UPDATE corporate_implementation_partner SET valid = 'yes' WHERE corporate_legal_name='$id_c'");
   
   //Email
    $sth = $DBcon->prepare("SELECT email FROM core_committee WHERE id = 1");
@@ -101,8 +101,8 @@ if(gettype($_POST['p_legal_name'])=="array"){
 foreach($_POST['p_legal_name'] as $val){
  $id_c=$val;
 
-  $sql="UPDATE `participative_partner_with_self-sustenance` SET `valid` = 'yes' WHERE p_legal_name = '$id_c'";
-   $conn->query($sql);
+ // $sql="UPDATE `participative_partner_with_self-sustenance` SET `valid` = 'yes' WHERE p_legal_name = '$id_c'";
+   $DBcon->query("UPDATE `participative_partner_with_self-sustenance` SET `valid` = 'yes' WHERE p_legal_name = '$id_c'");
   
   //Email
    $sth = $DBcon->prepare("SELECT email FROM core_committee WHERE id = 1");
@@ -137,8 +137,8 @@ else{
 if(gettype($_POST['f_legal_name'])=="array"){
 foreach($_POST['f_legal_name'] as $val){
  $id_c=$val;
-  $sql="UPDATE fully_funded_project_implementation_partner SET valid = 'yes' WHERE f_legal_name='$id_c'";
-   $conn->query($sql);
+ // $sql="UPDATE fully_funded_project_implementation_partner SET valid = 'yes' WHERE f_legal_name='$id_c'";
+   $DBcon->query("UPDATE fully_funded_project_implementation_partner SET valid = 'yes' WHERE f_legal_name='$id_c'");
   
   //Email
    $sth = $DBcon->prepare("SELECT email FROM core_committee WHERE id = 1");
