@@ -10,13 +10,13 @@ $stmt7 = $DBcon->query("SELECT count(email) FROM core_committee");
 
 
 	
-$stmt = $DBcon->prepare("INSERT INTO core_committee (email) VALUES('$partner_head')"); 
+$stmt = $bdd->prepare("INSERT INTO core_committee (email) VALUES('$partner_head')"); 
 
-$stmt2 = $DBcon->prepare("INSERT INTO core_committee (email) VALUES('$training_excellence')");
-$stmt3 = $DBcon->prepare("INSERT INTO core_committee (email) VALUES('$delivery_head')");
-$stmt4 = $DBcon->query("UPDATE core_committee SET email = '$partner_head' WHERE id = '1' ");
-$stmt5 = $DBcon->query("UPDATE core_committee SET email = '$training_excellence' WHERE id = '2' ");
-$stmt6 = $DBcon->query("UPDATE core_committee SET email = '$delivery_head' WHERE id = '3' ");
+$stmt2 = $bdd->prepare("INSERT INTO core_committee (email) VALUES('$training_excellence')");
+$stmt3 = $bdd->prepare("INSERT INTO core_committee (email) VALUES('$delivery_head')");
+$stmt4 = $bdd->query("UPDATE core_committee SET email = '$partner_head' WHERE id = '1' ");
+$stmt5 = $bdd->query("UPDATE core_committee SET email = '$training_excellence' WHERE id = '2' ");
+$stmt6 = $bdd->query("UPDATE core_committee SET email = '$delivery_head' WHERE id = '3' ");
 
 
 $row = $stmt7->rowCount();
