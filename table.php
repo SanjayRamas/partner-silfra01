@@ -93,15 +93,15 @@ require_once 'db_config.php';
     <tbody>
           <?php 
                 
-                $servername = "mysql://udigl5hvxqgfk9sq:hS6WRIRctjsMdBGTLqx@bqo4nnrsr-mysql.services.clever-cloud.com:3306/bqo4nnrsr";
-                $username = "udigl5hvxqgfk9sq";
-                $password = "hS6WRIRctjsMdBGTLqx";
-                $dbname = "bqo4nnrsr";
+                //$servername = "mysql://udigl5hvxqgfk9sq:hS6WRIRctjsMdBGTLqx@bqo4nnrsr-mysql.services.clever-cloud.com:3306/bqo4nnrsr";
+                //$username = "udigl5hvxqgfk9sq";
+                //$password = "hS6WRIRctjsMdBGTLqx";
+                //$dbname = "bqo4nnrsr";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+               // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'";
-                $result = $conn->query($sql);
+                $sql = $DBcon->prepare("SELECT legal_name,partner_type,valid FROM cluster_ngo_partner WHERE valid='no'");
+                $result = $DBcon->query($sql);
 
                 if ($result->num_rows > 0) {
     
@@ -136,15 +136,15 @@ require_once 'db_config.php';
     <tbody>
           <?php 
                 
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "partner";
+                //$servername = "localhost";
+                //$username = "root";
+                //$password = "";
+                //$dbname = "partner";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                //$conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'";
-                $result = $conn->query($sql);
+                $sql = $DBcon->prepare("SELECT corporate_legal_name,partner_type,valid FROM corporate_implementation_partner WHERE valid='no'");
+                $result = $DBcon->query($sql);
 
                 if ($result->num_rows > 0) {
     
@@ -178,15 +178,15 @@ require_once 'db_config.php';
     <tbody>
           <?php 
                 
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "partner";
+               // $servername = "localhost";
+               // $username = "root";
+                //$password = "";
+                //$dbname = "partner";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+               // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'";
-                $result = $conn->query($sql);
+                $sql = $DBcon->prepare("SELECT `p_legal_name`, `partner_type`, `valid` FROM `participative_partner_with_self-sustenance` WHERE valid = 'no'");
+                $result = $DBcon->query($sql);
                
                 if ($result->num_rows > 0) {
     
@@ -220,15 +220,15 @@ require_once 'db_config.php';
     <tbody>
           <?php 
                 
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "partner";
+              //  $servername = "localhost";
+              //  $username = "root";
+               // $password = "";
+               // $dbname = "partner";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+               // $conn = new mysqli($servername, $username, $password, $dbname);
                 
-                $sql = "SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'";
-                $result = $conn->query($sql);
+                $sql = $DBcon->prepare("SELECT f_legal_name,partner_type,valid FROM fully_funded_project_implementation_partner WHERE valid='no'");
+                $result = $DBcon->query($sql);
 
                 if ($result->num_rows > 0) {
     
