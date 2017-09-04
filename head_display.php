@@ -44,9 +44,9 @@ require_once 'db_config.php';
           
             
             
-        </tr><?php } }?>
+        <?php } }?>
         
-    </tbody>
+    
 
          
    
